@@ -19,9 +19,8 @@ end
 X_old = [X_old; NaN(12,N)];
 X_new = [X_new; NaN(12,N)];
 
-y = year(Time(end));
-m = month(Time(end));
-d = 1;
+[y, m, d] = datevec(Time(end));
+
 Time = [Time; datenum(y,(m+1:m+12)',d)];
 
 i_series = find(strcmp(series,Spec.SeriesID));
