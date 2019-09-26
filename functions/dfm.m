@@ -536,7 +536,7 @@ end
 
 R_new = R_new/T;
 RR = diag(R_new); %RR(RR<1e-2) = 1e-2;
-RR(i_idio_M) = 1e-04;
+RR(i_idio_M) = 1e-04;  % Ensure non-zero measurement error. See Doz, Giannone, Reichlin (2012) for reference.
 RR(nM+1:end) = 1e-04;
 R_new = diag(RR);
 
